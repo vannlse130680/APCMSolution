@@ -1,10 +1,14 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using APCMSolution.Application.Catalog.Brands;
+using APCMSolution.Data.EF;
+using APCMSolution.Utilities.Constants;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,7 +28,14 @@ namespace APCMSolution.BackendAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //copy code edit cai nay 
+            services.AddDbContext<CapstoneProjectContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString(SystemConstant.MainConnectionString)));
+            // Khai bao DI
+            services.AddTransient<IBrandService, BrandService>(); // moi lan request se tao moi
+            
             services.AddControllersWithViews();
+            //call method configure swagger
             ConfigureSwagger(services);
         }
 

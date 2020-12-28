@@ -8,4 +8,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\APCMSolution.Application\APCMSolution.Application.csproj" />
+    <ProjectReference Include="..\APCMSolution.Data\APCMSolution.Data.csproj" />
+    <ProjectReference Include="..\APCMSolution.Utilities\APCMSolution.Utilities.csproj" />
+  </ItemGroup>
+
 </Project>
