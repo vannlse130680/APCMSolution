@@ -3,9 +3,32 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Solution Items", "0. Solution Items", "{2AEBA468-7CFF-4AD2-BE46-8C315DC1B3F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Infrastructure", "1. Infrastructure", "{6B744CB4-C731-4CB4-AE5F-B40AE478EA4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 .Domain", "2 .Domain", "{BA1EFF74-B294-4892-B45B-DAF7C81FDEA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Hosts", "3. Hosts", "{3F01A8BF-B5B3-40E7-BD14-9E229F7CB520}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APCMSolution.WebApp", "APCMSolution.WebApp\APCMSolution.WebApp.csproj", "{B2B11049-281F-44AC-835D-B8E58306079F}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2B11049-281F-44AC-835D-B8E58306079F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B11049-281F-44AC-835D-B8E58306079F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B11049-281F-44AC-835D-B8E58306079F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B11049-281F-44AC-835D-B8E58306079F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B2B11049-281F-44AC-835D-B8E58306079F} = {3F01A8BF-B5B3-40E7-BD14-9E229F7CB520}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97C43416-E14B-4C14-AC81-68A1928A9C15}
