@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using APCMSolution.Application.Catalog.Brands;
 using APCMSolution.Data.EF;
+using APCMSolution.Data.Models;
+using APCMSolution.Data.Repositories;
+using APCMSolution.Data.UnitOfWorks;
 using APCMSolution.Utilities.Constants;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,8 +35,10 @@ namespace APCMSolution.BackendAPI
             services.AddDbContext<CapstoneProjectContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString(SystemConstant.MainConnectionString)));
             // Khai bao DI
+            services.AddTransient<IRepository<Brand>, Repository<Brand>>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IBrandService, BrandService>(); // moi lan request se tao moi
-            
+
             services.AddControllersWithViews();
             //call method configure swagger
             ConfigureSwagger(services);
@@ -42,8 +47,8 @@ namespace APCMSolution.BackendAPI
         //Swagger config
         private static void ConfigureSwagger(IServiceCollection services)
         {
-            
-            
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
